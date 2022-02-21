@@ -22,11 +22,6 @@
     # return #the number of valid smiley faces in array/list
 
 # Solution -
+import re
 def count_smileys(arr):
-    eyes = [':', ';']
-    nose = ['-', '~']
-    mouth = [')', 'D']
-    smileys = 0
-    if eyes in arr and mouth in arr:
-        smileys = smileys + 1
-    return smileys
+    return len(re.findall('[:;][-~]?[)D]', str(arr)))
